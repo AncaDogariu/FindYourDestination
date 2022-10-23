@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     List<MainData> datalist = new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
     RoomDB database;
+    MainAdapter adapter;
 
 
 
@@ -33,6 +35,58 @@ public class MainActivity extends AppCompatActivity {
         btAdd = findViewById(R.id.bt_add);
         btReset = findViewById(R.id.bt_reset);
         recyleView = findViewById(R.id.recycler_view);
+
+        //Initialize database
+        database = RoomDB.getInstance(this);
+        //Store database value in data list
+        datalist = database.mainDao().getAll();
+
+        //Initialize linear layout manager
+        linearLayoutManager = new LinearLayoutManager(this);
+        //Set layout manager
+        recyleView.setLayoutManager(linearLayoutManager);
+        //Initialize adapter
+        adapter = new MainAdapter(MainActivity.this, datalist);
+        //Set adapter
+        recyleView.setAdapter(adapter);
+
+        btAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Get string from edit text
+                String sText = editText.getText().toString().trim();
+                //Check condition
+                if(!sText.equals("")){
+                    //When text is not empty
+                    //Initialize main data
+                    MainData data = new MainData();
+                    //Set text on main data
+                    data.setText(sText);
+                    //Insert text in database
+                    database.mainDao().insert(data);
+                    //Clear edit text
+                    editText.setText("");
+                    //Notify when data is inserted
+                    datalist.clear();
+                    datalist.addAll(database.mainDao().getAll());
+                    adapter.notifyDataSetChanged();
+
+                }
+            }
+        });
+
+        btReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Delete all data from database
+                database.mainDao().reset(datalist);
+                //Notify when all data deleted
+                datalist.clear();
+                datalist.addAll(database.mainDao().getAll());
+                adapter.notifyDataSetChanged();
+
+            }
+        });
 
     }
 }
