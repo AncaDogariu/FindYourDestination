@@ -11,7 +11,7 @@ public class UserEntity {
     Integer id;
 
     @ColumnInfo(name="username")
-    private String username;
+   private String username;
 
     @ColumnInfo(name="email")
     private String email;
