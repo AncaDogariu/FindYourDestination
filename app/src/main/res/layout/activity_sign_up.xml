@@ -10,7 +10,7 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="367dp"
+        android:layout_width="370dp"
         android:layout_height="55dp"
         android:hint="Enter password"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,8 +23,8 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="363dp"
-        android:layout_height="45dp"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
         android:hint="Enter username"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +39,7 @@
 
         android:id="@+id/textView"
         style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="366dp"
+        android:layout_width="370dp"
         android:layout_height="43dp"
         android:layout_marginTop="80dp"
         android:text="Signup User"
@@ -55,8 +55,8 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="368dp"
-        android:layout_height="46dp"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
         android:hint="Enter email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +79,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.292" />
+
+    <TextView
+        android:layout_width="248dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="124dp"
+        android:text="Already have an account?"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/login"
