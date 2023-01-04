@@ -2,8 +2,10 @@ package com.example.findyourdestination;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -26,7 +28,7 @@ public class activity_search extends AppCompatActivity {
         searchView =findViewById(R.id.searchView);
         myListView=findViewById(R.id.listView);
 
-        myListView.setVisibility(View.GONE);
+//        myListView.setVisibility(View.GONE);
 
         arrayList=new ArrayList<>();
         arrayList.add("Timisoara");
@@ -42,17 +44,34 @@ public class activity_search extends AppCompatActivity {
         adapter =new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, arrayList);
         myListView.setAdapter(adapter);
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                myListView.setVisibility(View.VISIBLE);
+//                adapter.getFilter().filter(s);
+//                return false;
+//            }
+//        });
 
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onQueryTextChange(String s) {
-                myListView.setVisibility(View.VISIBLE);
-                adapter.getFilter().filter(s);
-                return false;
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0){
+                    //clicked apple
+
+                    startActivity(new Intent(activity_search.this,TimisoaraActivity.class));
+
+                }else if(position==1){
+                    //clicked orange
+                    startActivity(new Intent(activity_search.this,BucharestActivity.class));
+                }else{
+
+                }
             }
         });
 
