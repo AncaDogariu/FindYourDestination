@@ -68,8 +68,11 @@ public class activity_search extends AppCompatActivity {
 
                 }else if(position==1){
                     //clicked orange
-                    startActivity(new Intent(activity_search.this,BucharestActivity.class));
-                }else{
+                    startActivity(new Intent(activity_search.this,TgJiuActivity.class));
+                }else if(position==2) {
+                    //clicked orange
+                    startActivity(new Intent(activity_search.this, BucharestActivity.class));
+                } else{
 
                 }
             }
