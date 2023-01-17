@@ -4,21 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_200"
     tools:context=".HomeFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:text="Home Fragment"
-        android:textSize="25dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textColor="@color/purple_500"
-        android:textSize="40dp"
-        android:layout_marginTop="150dp"
-        android:textStyle="bold"/>
+        android:textSize="25dp"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>
