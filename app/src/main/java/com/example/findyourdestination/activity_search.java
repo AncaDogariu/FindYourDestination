@@ -35,11 +35,11 @@ public class activity_search extends AppCompatActivity {
         arrayList.add("Targu-Jiu");
         arrayList.add("Bucuresti");
         arrayList.add("Cluj-Napoca");
-        arrayList.add("Sibiu");
-        arrayList.add("Brasov");
-        arrayList.add("Sighisoara");
-        arrayList.add("Constanta");
-        arrayList.add("Oradea");
+//        arrayList.add("Sibiu");
+//        arrayList.add("Brasov");
+//        arrayList.add("Sighisoara");
+//        arrayList.add("Constanta");
+//        arrayList.add("Oradea");
 
         adapter =new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, arrayList);
         myListView.setAdapter(adapter);
