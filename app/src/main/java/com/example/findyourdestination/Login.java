@@ -2,6 +2,7 @@ package com.example.findyourdestination;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,13 +14,14 @@ public class Login extends AppCompatActivity {
 EditText username, password;
 Button login;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         username= findViewById(R.id.username);
         password=findViewById(R.id.password);
-        login=findViewById(R.id.login);
+        login=findViewById(R.id.loginl);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +49,10 @@ Button login;
                               });
                           }
                           else{
-                              // going to home page
-                           //   String name = userEntity.getUsername();
+                              //going to explore page
+                              //   String name = userEntity.getUsername();
                               startActivity(new Intent(
-                                      Login.this, HomeScreen.class));
+                                      Login.this, activity_search.class));
                                      // .putExtra("name", name));
 
 
