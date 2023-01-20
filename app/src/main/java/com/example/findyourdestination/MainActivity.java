@@ -24,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, exploreFragment).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                        return true;
+//                    case R.id.home:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+//                        return true;
 
                     case R.id.explore:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, exploreFragment).commit();

@@ -29,11 +29,11 @@ public class ProfileFragment extends Fragment {
        View view= inflater.inflate(R.layout.fragment_profile, container, false);
         logOutButton = (ImageButton)  view.findViewById(R.id.logout_btn);
         userinfo =  view.findViewById(R.id.username);
+  //      userinfo.setText(Login.name);
       // List<UserEntity> users = (List<UserEntity>) Login.userDao.login().getUsers();
   //      user = (UserEntity) getActivity().getIntent().getSerializableExtra("User");
 //        userDao = Room.databaseBuilder(getContext(), UserDatabase.class, "am_users.db").allowMainThreadQueries().build().userDao();
-
-
+     //   List<UserEntity> users = Login.userDatabase.userDao().getUsers();userinfo=
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

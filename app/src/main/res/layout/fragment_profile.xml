@@ -21,10 +21,11 @@
             android:src="@drawable/person_avatar" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/profile_name"
+            android:layout_width="67dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:text="James Leo"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -64,7 +65,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="Username:"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="25dp"
@@ -72,10 +73,10 @@
 
         <TextView
             android:id="@+id/username"
-            android:layout_width="wrap_content"
+            android:layout_width="129dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:text=""
+            android:text="adela2000"
             android:textColor="@color/black"
             android:textSize="22dp" />
 
@@ -91,27 +92,27 @@
         android:paddingRight="15dp">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="54dp"
+            android:layout_height="44dp"
             android:src="@drawable/ic_mail" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Email"
+            android:text="Email:"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="282dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:text="james.leo@gmail.com"
+            android:text="pop.adela@gmail.com"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="22dp" />
 
     </LinearLayout>
 
@@ -132,11 +133,11 @@
 
         <ImageButton
             android:id="@+id/logout_btn"
-            android:layout_width="87dp"
-            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:layout_height="46dp"
             android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/white"
-            android:src="@drawable/ic_logout" />
+            android:src="@drawable/ic_baseline_logout_24" />
     </LinearLayout>
 
 

@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +17,15 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.List;
+
 public class Login extends AppCompatActivity {
 EditText username, password;
 Button login;
-public static UserDatabase myUserDatabase;
+public static   UserDatabase userDatabase;
+    public static   String name;
+    List<UserEntity> usersList;
+
    public static UserDao userDao;
    // @SuppressLint("MissingInflatedId")
     @Override
@@ -47,7 +53,7 @@ public static UserDatabase myUserDatabase;
                }
                else{
                    // database initialization : query
-                   UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                    userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
                     userDao = userDatabase.userDao();
                    new Thread(new Runnable() {
                        @Override
@@ -75,8 +81,14 @@ public static UserDatabase myUserDatabase;
                           }
                        }
                    }).start();
+             //       usersList = userDatabase.userDao().getUsers();
+
+
                }
 
+//                for( UserEntity user: usersList){
+//                     name=usernameText;
+//                }
             }
 
 

@@ -16,7 +16,7 @@ public interface UserDao {
     @Query("SELECT * FROM users where username= (:username) and email= (:email) ")
     UserEntity getUser( String username, String email);
 
-    @Query("SELECT * FROM users where username= (:username) and email= (:email) ")
-    List<UserEntity> getUsers(String username, String email);
+    @Query("SELECT * FROM users ")
+    List<UserEntity> getUsers();
 
 }
