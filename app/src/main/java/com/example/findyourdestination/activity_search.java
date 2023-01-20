@@ -2,6 +2,7 @@ package com.example.findyourdestination;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,12 @@ public class activity_search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+//        if(findViewById(R.id.frame_lay)!= null){
+//            if(savedInstanceState!=null)
+//            return;
+//            getSupportFragmentManager().beginTransaction().add(R.id.frame_lay,new HomeFragment(), null).commit();
+//
+//        }
 
         searchView =findViewById(R.id.searchView);
         myListView=findViewById(R.id.listView);

@@ -1,27 +1,41 @@
 package com.example.findyourdestination;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 public class Login extends AppCompatActivity {
 EditText username, password;
 Button login;
-
-    @SuppressLint("MissingInflatedId")
+public static UserDatabase myUserDatabase;
+   public static UserDao userDao;
+   // @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .add(android.R.id.content, new HomeFragment()).commit();
+//        }
         setContentView(R.layout.activity_login);
         username= findViewById(R.id.username);
         password=findViewById(R.id.password);
         login=findViewById(R.id.loginl);
+
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +48,7 @@ Button login;
                else{
                    // database initialization : query
                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
-                   UserDao userDao = userDatabase.userDao();
+                    userDao = userDatabase.userDao();
                    new Thread(new Runnable() {
                        @Override
                        public void run() {
@@ -51,8 +65,10 @@ Button login;
                           else{
                               //going to explore page
                               //   String name = userEntity.getUsername();
-                              startActivity(new Intent(
-                                      Login.this, activity_search.class));
+                              Intent i = new Intent(
+                                      Login.this, MainActivity.class);
+                             startActivity(i);
+                              finish();
                                      // .putExtra("name", name));
 
 
@@ -62,7 +78,13 @@ Button login;
                }
 
             }
+
+
         });
 
+
+
     }
+
+
 }
