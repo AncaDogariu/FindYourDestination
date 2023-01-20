@@ -29,7 +29,7 @@ public class TimisoaraActivity extends AppCompatActivity {
         buttonBack.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(context, activity_search.class);
+                Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
             }
         });
